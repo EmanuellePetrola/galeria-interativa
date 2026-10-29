@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Mosaico -Homem Aranha</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="spider-web.png" type="icon">
+   
+</head>
+<body>
+    <header>
+        <h1>Galeria de Imagens</h1>
+        <p>Explore nossas imagens por categoria</p>
+    </header>
+     <!-- Filtros -->
+     <nav class="filtros">
+        <button
+        class="filtro ativo"
+        data-filtro="todas"
+        >
+            Todas
+        </button>
+ 
+        <button
+        class="filtro"
+        data-filtro="homemaranha"
+        >
+           Homem Aranha
+        </button>
+ 
+        <button
+        class="filtro"
+        data-filtro="flor"
+        >
+            Flor
+        </button>
+ 
+        <button
+        class="filtro"
+        data-filtro="teais"
+        >
+          Teais
+        </button>
+
+        <button
+        class="filtro"
+        data-filtro="paisagem"
+        >
+          Paisagem
+        </button>
+ 
+     </nav>
+ 
+     <p id="totalImagens" class="total"></p>
+ 
+     <!--Galeria-->
+     <main class="galeria">
+        <img
+            src="img/foto1.jpeg"
+            alt="Homemaranha"
+            class="miniatura destaque"
+            data-categoria="homemaranha"
+            data-descricao="O cenário de fundo apresenta uma cidade à noite, intensamente desfocada com um efeito de movimento"
+            tabindex="0"
+        >
+        <img
+            src="img/foto2.jpeg"
+            alt="Flor"
+            class=" miniatura horizontal"
+            data-categoria="flor"
+            data-descricao="Destaca-se no centro um grande emblema preto de uma aranha"
+            tabindex="0"
+        >
+        <img
+            src="img/foto3.jpeg"
+            alt="Teais"
+            class="miniatura"
+            data-categoria="teais"
+            data-descricao="um padrão composto por várias flores de tonalidade vermelho-escuro ou bordeaux, cobertas por finas gotas de orvalho ou água que realçam a textura das pétalas"
+            tabindex="0"
+        >
+        <img
+            src="img/foto4.jpeg"
+            alt="Homemaranha"
+            class="miniatura vertical"
+            data-categoria="homemaranha"
+            data-descricao="O cenário noturno da cidade surge intensamente desfocado, com luzes quentes e brilhantes (efeito bokeh) que iluminam o topo do herói em tons avermelhados e dourados"
+            tabindex="0"
+        >
+        <img
+            src="img/foto5.jpeg"
+            alt="Homemaranha"
+            class="miniatura"
+            data-categoria="homemaranha"]
+            data-descricao="Mostra o Homem-Aranha no centro de uma grande teia vermelha brilhante que forma um túnel"
+            tabindex="0"
+        >
+        <img
+            src="img/foto6.jpeg"
+            alt="Teais"
+            class="miniatura horizontal"
+            data-categoria="teais"
+            data-descricao="Uma aranha preta com pernas compridas e pontiagudas, desenhada num estilo estilizado."
+            tabindex="0"
+        >
+        <img
+            src="img/foto7.jpeg"
+            alt="Homemaranha"
+            class="miniatura"
+            data-categoria="homemaranha"
+            data-descricao="Os olhos grandes e expressivos brilham com uma luz branca intensa, complementados por traços dinâmicos de luz vermelha e azul em movimento que cruzam a composição"
+            tabindex="0"
+        >
+        <img
+            src="img/foto8.jpeg"
+            alt="Paisagem"
+            class="miniatura"
+            data-categoria="paisagem"
+            data-descricao="Um cais ou passadiço de madeira estende-se sobre um lago calmo que reflete perfeitamente a paisagem envolvente."
+            tabindex="0"
+        >
+        <img
+            src="img/foto9.jpeg"
+            alt="Paisagem"
+            class="miniatura horizontal"
+            data-categoria="paisagem"
+            data-descricao=" Ao fundo, destaca-se uma enorme lua ou sol vermelho brilhante que ocupa grande parte do horizonte"
+            tabindex="0"
+        >
+    </main>
+     <!-- Modal -->
+    <div
+         id="modal"
+         class="modal"
+    >
+ 
+        <button id="fechar" class="fechar">&times;</button>
+        <button id="anterior" class="navegacao anterior">&#10094;</button>
+        <div class="modal-conteudo">
+            <img src="" alt="imagem Ampliada" id="imagemModal">
+            <div class="legenda">
+                <span id="contador"></span>
+                <span id="nomeImagem"></span>
+
+                <div class="legenda-detalhes">
+                    <p id="categoriaImagem"></p>
+                    <p id="descricaoImagem"></p>
+                </div>
+                   
+            </div>
+        </div>
+        <button id="proximo" class="navegacao proximo">&#10095;</button>
+    </div>
+      <script src="script/script.js"></script>
+</body>
+</html>
+ 

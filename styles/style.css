@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+    font-family:   "Press Start 2P", system-ui;
+    background-color: #23356f;
+    color: rgba(188, 183, 183, 0.545);
+    min-height: 100vh;
+}
+
+
+header{
+    text-align: center;
+    padding: 40px 20px 25px;
+}
+
+header h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p{
+    color: rgb(215, 39, 59);
+}
+
+
+.filtros{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding:0 20px ;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+.filtro{
+    padding: 12px 24px;
+    border: 1px solid #1e41cc;
+    border-radius: 55px;
+
+    background-color: fff;
+    color: #333;
+
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro:hover{
+    background-color: rgb(214, 16, 20);
+}
+
+.filtro.ativo{
+    background-color: rgb(68, 116, 231);
+    color:rgb(123, 225, 228);
+    border-color: rgb(109, 51, 167);
+}
+
+.total{
+    text-align: center;
+    color:  rgba(233, 206, 206, 0.545);;
+    margin-bottom: 25px;
+}
+
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.miniatura{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box shadow 0.3s;
+}
+
+.miniatura:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px #333;
+}
+
+.miniatura:focus-visible{
+    outline: 3px solid #ff34b3;
+}
+
+.destaque{
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.horizontal{
+    grid-column: span 2;
+}
+
+.vertical{
+    grid-row: span 2;
+}
+
+
+.miniatura.oculta{
+    display: none;
+}
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 70px;
+}
+
+.modal.ativo{
+    display: flex;
+}
+
+.modal-conteudo{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.modal-conteudo img{
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+.legenda{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    background-color: black;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+    font-size: 16px;
+}
+
+
+.legenda-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: rgb(129, 53, 41);
+    border: 1px solid rgba(123, 225, 228, 0.4); 
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: azure;
+    text-align: center;
+}
+
+.legenda-detalhes p{
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+    color: #23356f;
+}
+
+#categoriaImagem{
+    color: #ff5555;
+    font-weight: bold;
+    font-size: 14px;
+}
+    
+
+.fechar{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    color: #d1d3db;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+.fechar:hover{
+    color: #ff34b3;
+}
+
+.navegacao{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    border: none;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.navegacao:hover{
+    border-color: #d1d3db;
+}
+
+.anterior{
+    left: 15px;
+}
+
+.proximo{
+    right: 15px;
+}
+
+
+@media (max-width: 900px) {
+ 
+.galeria {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 130px;
+    gap: 15px;
+}
+ 
+.destaque {
+    height: auto;
+    width: 100%;
+}
+ 
+.modal {
+    padding: 50px 40px;
+}
+}
+ 
+
+@media (max-width: 600px) {
+h1 {
+    font-size: 36px;
+}
+ 
+.filtros {
+    gap: 8px;
+    padding: 0 10px;
+}
+ 
+.filtro {
+    padding: 10px 16px;
+    font-size: 13px;
+}
+ 
+.galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 120px;
+    gap: 10px;
+    padding: 0 10px;
+}
+ 
+
+.destaque {
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 100%;
+    height: 250px;
+}
+ 
+.horizontal {
+    grid-column: span 2;
+}
+ 
+.vertical {
+    grid-row: span 2;
+}
+ 
+
+.galeria.filtrada {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 180px;
+}
+ 
+.galeria.filtrada .miniatura {
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 100%;
+    height: 180px;
+}
+ 
+
+.modal {
+    padding: 50px 10px 20px;
+}
+ 
+.modal-conteudo {
+    max-width: 100%;
+    width: 100%;
+}
+ 
+.modal-conteudo img {
+    max-width: 100%;
+    max-height: 65vh;
+}
+ 
+.legenda {
+    padding: 10px;
+    gap: 5px;
+}
+ 
+.legenda h2 {
+    font-size: 25px;
+}
+ 
+.legenda p {
+    font-size: 13px;
+}
+ 
+.fechar {
+    top: 8px;
+    right: 12px;
+    font-size: 32px;
+}
+ 
+.navegacao {
+    font-size: 25px;
+    padding: 8px 12px;
+}
+ 
+.anterior {
+    left: 5px;
+}
+ 
+.proximo {
+    right: 5px;
+}
+}
+ 
+
+ 
